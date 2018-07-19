@@ -1,0 +1,76 @@
+{# templates/public/template.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{#HEAD#}
+    {% block title %} {{ title }} {% endblock %}
+    {% block meta_description %}Le truc qui apparait dans les recherches google{% endblock %}
+    {% block stylesheets %}
+    <!--CSS SPEC SALLE-->
+        <link href="{{ asset('css/salle.css') }}" rel="stylesheet">
+    {% endblock %}
+
+{#FIN DE HEAD#}
+
+{#HEADER#}
+    {% block header %}
+    
+        
+    <header id="headerSalle">
+        <div class="intro-body">
+            <div class="container intro">
+                <div class="row">
+                    <div class="col-sm-12 mx-auto">
+
+                        <h1 class="brand-heading">
+                            LPJ <br> LARGE <span class="vert_logo console"> PROJECT </span> JAM
+                        </h1>
+                        
+                        <div class="barre-blanche col-sm-6"></div>
+                        
+                        <p class="intro-text">
+                            Le meilleur des sites web pour professionnels   
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    {% endblock %}
+{#FIN DE HEADER#}
+
+{#MAIN#}
+{% block main %}
+    
+    <div class="container-fluid">
+        
+        <!--Section Toutes nos salles-->
+            <section class="col-lg-12">
+                
+                <h2>CONCEPTION DE SITE WEB</h2>
+               
+                <p>
+                 Creer un super site web captivant, à votre goût, selon vos inspirations. En équations a vos besoins professionnels. Qui vous apporte un résultat, "le fruit de vos effort", grâce a une performance de communication planétaire, et un référencement efficace. Voila ce dont vos entreprises ont besoins.<br><br>
+
+Nous définissons ensemble les moyens adaptés à la mise en œuvre de votre projet, et les objectifs devant être atteints à chaque étape.<br><br>
+
+Un accompagnement efficient, ou nous assurons sont maintient tous au long de sa durer. Vous aurez un seul interlocuteur responsable pour chacune des étapes. Avant le projet (conseils et conception), pendant le développement (développement, installation et formation) et après la mise en œuvre ( maintenance applicative), un seul interlocuteur parfaitement informé de votre fonctionnement et de vos contraintes, un seul numéro de téléphone.<br><br>
+
+Un temps de développement réduit, une communication optimisée, une aide efficace et instantanée, des relations directes et simplifiées : telles sont nos priorités.<br><br>
+                </p>
+                
+                
+            </section>
+        
+        
+    </div><!--Fin div container-fluid-->
+
+
+
+    {% endblock %}
+{#FIN DE MAIN#}
+
+{#SCRIPT#}
+    {% block javascripts %}{% endblock %}
+{#FIN DE SCRIPT#}

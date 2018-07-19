@@ -1,0 +1,68 @@
+{# si dte existe #}
+   {% if dte %}
+
+       <!-- Footer -->
+       <section id="footer">
+           <div class="container">
+               <div class="row text-center text-xs-center text-sm-left text-md-left">
+                   <div class="col-xs-12 col-sm-4 col-md-4">
+                       <h5>Index</h5>
+                       <ul class="list-unstyled quick-links">
+                           <li><a href="http://localhost/EasyOffice/public/concept"><i class="fa fa-angle-double-right"></i>Concept</a></li>
+                           <li><a href="http://localhost/EasyOffice/public/services"><i class="fa fa-angle-double-right"></i>Services</a></li>     
+                           <li><a href="http://localhost/EasyOffice/public/salle"><i class="fa fa-angle-double-right"></i>Création de site</a></li>
+                           <li><a href="http://localhost/EasyOffice/public/aide"><i class="fa fa-angle-double-right"></i>Aide</a></li>
+                           <li><a href="http://localhost/EasyOffice/public/nos_refs"><i class="fa fa-angle-double-right"></i>Nos références</a></li>
+                           <li><a href="http://localhost/EasyOffice/public/contact"><i class="fa fa-angle-double-right"></i>Contact</a></li>
+                           
+                       </ul>
+                   </div>
+                   <div class="col-xs-12 col-sm-4 col-md-4">
+                       <h5>LPJ FILEMAKER®</h5>
+                       <ul class="list-unstyled quick-links">
+                           <li><a href="http://localhost/EasyOffice/public/mentionsLegales"><i class="fa fa-angle-double-right"></i>Mentions Legales</a></li>
+                           <li><a href=" https://goo.gl/maps/CWeKKCMXUwJ2" target="_blank"><i class="fa fa-angle-double-right"></i>Nos locaux</a></li>
+                           <li><a href="http://localhost/EasyOffice/public/contact"><i class="fa fa-angle-double-right"></i>Nous contacter</a></li>
+                       </ul>
+                   </div>
+                   <div class="col-xs-12 col-sm-4 col-md-4">
+                       <h5>Villes les plus actives</h5>
+                       <ul class="list-unstyled quick-links">
+                           <li><a href="#"><i class="fa fa-angle-double-right"></i>Geneve</a></li>
+                           <li><a href="#"><i class="fa fa-angle-double-right"></i>Singapour</a></li>
+                           <li><a href="#"><i class="fa fa-angle-double-right"></i>Paris</a></li>
+                           <li><a href="#"><i class="fa fa-angle-double-right"></i>Zurich</a></li>
+                           <li><a href="#"><i class="fa fa-angle-double-right"></i></a>Dubaï</li>
+                           <li><a href="#"><i class="fa fa-angle-double-right"></i></a>New york</li>
+                           <li><a href="#"><i class="fa fa-angle-double-right"></i></a>Londre</li>
+                       </ul>
+                   </div>
+               </div>
+               <div class="row">
+                   <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+                       <ul class="list-unstyled list-inline social text-center">
+                           <li class="list-inline-item"><a href="https://www.facebook.com/easyoffice" title="Facebook" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                           <li class="list-inline-item"><a href="https://twitter.com/easyoffice" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                           <li class="list-inline-item"><a href="https://www.instagram.com/easyoffice" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                           <li class="list-inline-item"><a href="https://plus.google.com/easyoffice" title="Google +" target="_blank"><i class="fab fa-google-plus"></i></a></li>
+                           <li class="list-inline-item"><a href="mailto:contact@lpj.ch" title="Nous envoyer un email :)" target="_blank"><i class="fa fa-envelope"></i></a></li>
+                       </ul>
+                   </div>
+                   </hr>
+               </div>
+               <div class="row">
+                   <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+                       <p><a href="{{ url('mentionsLegales')}}">Mentions légales</a> | <small>Nous sommes le {{ dte }}</small> | Code with <span style="color: #ff4571;">♥</span> | Copyright &copy;
+                           <a href="mailto:philippe@lpj.ch" target="_blank" title="Email || Philippe ">Philippe</a> ,                           
+                           <a href="mailto:david@lpj.ch" target="_blank" title="Email || David ">David</a> ,                           
+                           <a href="mailto:sag@lpj.ch" target="_blank" title="Email || Sag ">Sag</a> ,
+                           <a href="mailto:patrice@lpj.ch" target="_blank" title="Email || Patrice ">Patrice</a> 
+                       </p>
+                   </div>
+                   </hr>
+               </div>
+           </div>
+       </section>
+       <!-- ./Footer -->
+
+   {% endif %}

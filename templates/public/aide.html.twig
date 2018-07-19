@@ -1,0 +1,262 @@
+{# templates/public/template.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{#HEAD#}
+    {% block title %} {{ title }} {% endblock %}
+    {% block meta_description %}EasyOffice, votre partenaire pour vos salles professionnelles{% endblock %}
+    {% block stylesheets %}
+    <!--CSS SPEC SALLE-->
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+         <link href="{{ asset('css/aide.css') }}" rel="stylesheet">
+    {% endblock %}
+
+{#FIN DE HEAD#}
+
+{#HEADER#}
+    {% block header %}
+    
+        
+    <header id="headerSalle">
+        <div class="intro-body">
+            <div class="container intro">
+                <div class="row">
+                    <div class="col-sm-12 mx-auto">
+
+                        <h1 class="brand-heading">
+                            Aide <br> LPJ LARGE <span class="vert_logo console">PROJECT </span> JAM
+                        </h1>
+                        
+                        <div class="barre-blanche col-sm-6"></div>
+                        
+                        <p class="intro-text">
+                            Besoin d'aide ? Merci de consulter la FAQ !  
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    {% endblock %}
+{#FIN DE HEADER#}
+
+{#MAIN#}
+{% block main %}
+    
+    <div class="container">
+        
+        <!-- SECTION 1-->
+        <div class="row margin-top margin-bottom">
+            <!--Section Question type 1-->
+            <div class="col-sm-6">
+                <div class="container-fluid">
+                    <div class="row margin-top">
+                        <h5>Informations générales</h5>
+                    </div>
+                    <div class="row">
+
+                        <!--Section Criteres-->
+                        <div class="col-sm-12">
+                            <button class="btn btn-default margin-left" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+
+                                Qui est LPJ?
+
+                            </button>
+
+                            <div class="collapse" id="collapseExample1">
+                                <div class="card card-body">
+                                    Consultant Expert Filemaker, Membre Business Alliance, LPJ Sàrl vous apporte des solutions concrètes et originales, adaptées à vos besoins et exigences, quelques soient vos objectifs.Pour CRM, et logiciels.<br/>  
+                                </div>
+                            </div>
+                        </div>
+
+                        </div><!--Fin div row-->
+                        <div class="row">
+
+                            <!--Section Criteres-->
+                            <div class="col-sm-12">
+                                <button class="btn btn-default margin-left" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+
+                                   Question 2
+
+                                </button>
+
+                                <div class="collapse" id="collapseExample">
+                                    <div class="card card-body">
+                                        Large Project Jam
+Une approche individualisée qui vous apporte des solutions concrètes et originales, adaptées précisément à vos besoins et à vos pratiques, au plus près de vos objectifs.<br/>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div><!--Fin div row-->
+                
+                </div><!-- Fin de containerfluid-->
+            </div><!-- Fin de col-sm-6 -->
+            <!-- Fin de Section Question type 1-->
+            
+            <!--Section Question type 2-->
+            <div class="col-sm-6">
+                <div class="container-fluid">
+                    <div class="row margin-top">
+                        <h5>Recherche d'informations</h5>
+                    </div>
+                    <div class="row">
+
+                        <!--Section Criteres-->
+                        <div class="col-sm-12">
+                            <button class="btn btn-default margin-left" type="button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">
+
+                                Où se trouvent les conditions générales ?
+
+                            </button>
+
+                            <div class="collapse" id="collapseExample3">
+                                <div class="card card-body">
+                                    Les conditions générales d'utilisation du site LPJ sont accessibles en cliquant <a href="{{ url('inscription') }}">ici.</a>    
+                                </div>
+                            </div>
+                        </div>
+
+                        </div><!--Fin div row-->
+                        <div class="row">
+
+                            <!--Section Criteres-->
+                            <div class="col-sm-12">
+                                <button class="btn btn-default margin-left" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+
+                                   Où se trouvent les mentions légales ?
+
+                                </button>
+
+                                <div class="collapse" id="collapseExample2">
+                                    <div class="card card-body">
+                                        Les mentions légales du site LPJ sont accessibles en cliquant <a href="{{ url('mentionsLegales') }}">ici.</a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div><!--Fin div row-->
+                
+                </div><!-- Fin de containerfluid-->
+            </div><!-- Fin de col-sm-6 -->
+            <!-- Fin de Section Question type 2-->
+            
+            
+        </div><!-- Fin de div class row-->
+        <!-- FIN SECTION 1-->
+        
+        <!-- SECTION 2-->
+        <div class="row margin-top margin-bottom">
+            <!--Section Question type 3-->
+            <div class="col-sm-6">
+                <div class="container-fluid">
+                    <div class="row margin-top">
+                        <h5>Professionnel</h5>
+                    </div>
+                    <div class="row">
+
+                        <!--Section Criteres-->
+                        <div class="col-sm-12">
+                            <button class="btn btn-default margin-left" type="button" data-toggle="collapse" data-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4">
+
+                                Comment se renseigner?
+                                
+                            </button>
+
+                            <div class="collapse" id="collapseExample4">
+                                <div class="card card-body">
+                                    Nous contacter.Nos plateformes permettent une mise en relation simple<br/> un accompagnement personnalisé contenant, le maximum d'informations.  
+                                </div>
+                            </div>
+                        </div>
+
+                        </div><!--Fin div row-->
+                        <div class="row">
+
+                            <!--Section Criteres-->
+                            <div class="col-sm-12">
+                                <button class="btn btn-default margin-left" type="button" data-toggle="collapse" data-target="#collapseExample5" aria-expanded="false" aria-controls="collapseExample5">
+
+                                   Comment commander une prestation sur mesure?
+ 
+
+                                </button>
+
+                                <div class="collapse" id="collapseExample5">
+                                    <div class="card card-body">
+                                        Nous contacter.Nos plateformes permettent une mise en relation simple<br/> un accompagnement personnalisé contenant, le maximum d'informations.
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div><!--Fin div row-->
+                
+                </div><!-- Fin de containerfluid-->
+            </div><!-- Fin de col-sm-6 -->
+            <!-- Fin de Section Question type 3-->
+            
+            <!--Section Question type 4-->
+            <div class="col-sm-6">
+                <div class="container-fluid">
+                    <div class="row margin-top">
+                        <h5>Particulier</h5>
+                    </div>
+                    <div class="row">
+
+                        <!--Section Criteres-->
+                        <div class="col-sm-12">
+                            <button class="btn btn-default margin-left" type="button" data-toggle="collapse" data-target="#collapseExample6" aria-expanded="false" aria-controls="collapseExample6">
+
+                                Comment se renseigner?
+
+                            </button>
+
+                            <div class="collapse" id="collapseExample6">
+                                <div class="card card-body">
+                                    Nous contacter.Nos plateformes permettent une mise en relation simple<br/> un accompagnement personnalisé contenant, le maximum d'informations.   
+                                </div>
+                            </div>
+                        </div>
+
+                        </div><!--Fin div row-->
+                        <div class="row">
+
+                            <!--Section Criteres-->
+                            <div class="col-sm-12">
+                                <button class="btn btn-default margin-left" type="button" data-toggle="collapse" data-target="#collapseExample7" aria-expanded="false" aria-controls="collapseExample7">
+
+                                   Comment commander une prestation sur mesure?
+
+                                </button>
+
+                                <div class="collapse" id="collapseExample7">
+                                    <div class="card card-body">
+                                        Nous contacter.Nos plateformes permettent une mise en relation simple<br/> un accompagnement personnalisé contenant, le maximum d'informations.
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div><!--Fin div row-->
+                
+                </div><!-- Fin de containerfluid-->
+            </div><!-- Fin de col-sm-6 -->
+            <!-- Fin de Section Question type 4-->
+
+        </div><!-- Fin de div class row-->
+        <!-- FIN SECTION 2-->
+        
+        
+    </div><!--Fin div container-fluid-->
+
+
+
+    {% endblock %}
+{#FIN DE MAIN#}
+
+{#SCRIPT#}
+    {% block javascripts %}{% endblock %}
+{#FIN DE SCRIPT#}

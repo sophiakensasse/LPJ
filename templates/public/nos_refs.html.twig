@@ -1,0 +1,86 @@
+{# templates/public/template.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{#HEAD#}
+    {% block title %} {{ title }} {% endblock %}
+    {% block meta_description %}Le truc qui apparait dans les recherches google{% endblock %}
+    {% block stylesheets %}
+    <!--CSS SPEC SALLE-->
+        <link href="{{ asset('css/salle.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/nos_refs.css') }}" rel="stylesheet">
+    {% endblock %}
+
+{#FIN DE HEAD#}
+
+{#HEADER#}
+    {% block header %}
+    
+        
+    <header id="headerSalle">
+        <div class="intro-body">
+            <div class="container intro">
+                <div class="row">
+                    <div class="col-sm-12 mx-auto">
+
+                        <h1 class="brand-heading">
+                            NOS REFERENCES <br>LPJ LARGE <span class="vert_logo console"> PROJECT</span> JAM
+                        </h1>
+                        
+                        <div class="barre-blanche col-sm-6"></div>
+                        
+                        <p class="intro-text">
+                            Projets optimiser 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    {% endblock %}
+{#FIN DE HEADER#}
+
+{#MAIN#}
+{% block main %}
+    
+    <div class="container">
+        
+        <div class="row">
+            <!--Section Toutes nos salles-->
+            <section class="col-lg-12">
+                
+                <h2>NOS REFERENCES</h2>
+               
+                <p>
+                 LPJ: Une approche individualisée qui vous apporte des solutions concrètes et originales, adaptées précisément à vos besoins et à vos pratiques, au plus près de vos objectifs.<br><br>
+
+Nous définissons ensemble les moyens adaptés à la mise en œuvre de votre projet, et les objectifs devant être atteints à chaque étape.<br><br>
+
+Vous aurez un seul interlocuteur responsable pour chacune des étapes. Avant le projet (conseils et conception), pendant le développement (développement, installation et formation) et après la mise en œuvre ( maintenance applicative), un seul interlocuteur parfaitement informé de votre fonctionnement et de vos contraintes, un seul numéro de téléphone.<br><br>
+
+Un temps de développement réduit, une communication optimisée, une aide efficace et instantanée, des relations directes et simplifiées : telles sont nos priorités.<br><br>
+                </p>
+                
+                
+            </section>
+            
+     
+            
+      
+            
+            
+            
+            <!--Fin Section Toutes nos salles-->
+        </div>
+        
+    </div><!--Fin div container-fluid-->
+
+
+
+    {% endblock %}
+{#FIN DE MAIN#}
+
+{#SCRIPT#}
+    {% block javascripts %}{% endblock %}
+{#FIN DE SCRIPT#}

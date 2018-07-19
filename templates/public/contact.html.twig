@@ -1,0 +1,115 @@
+{# templates/public/template.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{#HEAD#}
+    {% block title %} {{ title }} {% endblock %}
+    {% block meta_description %}Le truc qui apparait dans les recherches google{% endblock %}
+    {% block stylesheets %}
+        <link href="{{ asset('css/contact.css') }}" rel="stylesheet">
+    {% endblock %}
+
+{#FIN DE HEAD#}
+
+{#HEADER#}
+    {% block header %}
+    <header id="headerSalle">
+        <div class="intro-body">
+            <div class="container intro">
+                <div class="row">
+                    <div class="col-sm-12 mx-auto">
+
+                        <h1 class="brand-heading">
+                            LPJ <br> LARGE <span class="vert_logo console"> PROJECT</span> JAM
+                        </h1>
+                        
+                        <div class="barre-noire col-sm-6"></div>
+                        
+                        <p class="intro-text">
+                            Pour tous renseignements, n'hésitez pas à nous contacter ! 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    {% endblock %}
+{#FIN DE HEADER#}
+
+{#MAIN#}
+{% block main %}
+        <!--Section -->
+        <section>
+          <div class="container-fluid margin-bottom">
+            <div class="row text-left">
+                
+                <div class="col-lg-1">
+                </div>
+            
+              <div class="col-lg-5">
+                  <h2>Formulaire de contact</h2>
+                  
+                  <form>
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Email address</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                      </div>
+                      
+                      <div class="form-group">
+                        <label for="exampleFormControlSelect1">Vous êtes</label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                          <option>Professionnel</option>
+                          <option>Particuler</option>
+                        </select>                     
+                      </div>
+                      
+                      <div class="form-group">
+                        <label for="exampleFormControlSelect1">Objet</label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                          <option>Renseignements</option>
+                          <option>CRM</option>
+                          <option>Logiciels</option>
+                        </select>
+                      </div>
+                      
+                      <form>
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Nom</label>
+                        <input type="Nom" class="form-control" id="exampleFormControlInput1" placeholder="Nom">
+                      </div>  
+                          
+                         <form>
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Téléphone</label>
+                        <input type="Téléphone" class="form-control" id="exampleFormControlInput1" placeholder="Téléphone">
+                      </div> 
+                      
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Votre message</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                      
+                      <button class="btn btn-default" type="submit">Envoyer</button>
+                      
+                    </form>
+
+              </div>
+
+                
+              <div class="col-lg-5 text-left">
+                  <h2>Siège social</h2>
+                  <p><i class="fa fa-map-marker-alt " aria-hidden="true"></i> Rue du Grand-Pré 4<br> 1007 Lausanne Suisse</p>
+                  <p><i class="fa fa-phone " aria-hidden="true"></i>+41 (0) 77 204 45 36</p><p><i class="fa fa-envelope" aria-hidden="true"></i> Info@lpj.ch </p>
+                  <div id="map">
+              </div>
+              </div>
+            </div>
+          </div><!--fin de div container fluid-->
+        </section>
+
+{% endblock %}
+{#FIN DE MAIN#}
+
+{#SCRIPT#}
+    {% block javascripts %}{% endblock %}
+{#FIN DE SCRIPT#}

@@ -1,0 +1,111 @@
+{# templates/public/template.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{#HEAD#}
+    {% block title %} {{ title }} {% endblock %}
+    {% block meta_description %}Le truc qui apparait dans les recherches google{% endblock %}
+    {% block stylesheets %}{% endblock %}
+
+{#FIN DE HEAD#}
+
+
+{#HEADER#}
+    {% block header %} <h1>Proposer une salle</h1> {% endblock %}
+{#FIN DE HEADER#}
+
+
+{#MAIN#}
+{% block main %}
+        <!--Formulaire d'inscription-->
+        <div class="row">
+           <div class="col-sm-3" ></div>
+            <div class="col-sm-6">
+                {#
+                    affichage des messages flash
+                    
+                    {% for message in app.flashes('message') %}
+                        <div class="alert alert-success text-center">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                #}
+            </div>
+        </div>
+        
+        <div class="row">
+        
+            <div class= "col-sm-6">
+                <fieldset>
+                   <legend>Proposer une salle</legend>
+
+                        {{ form_start(form) }}
+
+                        {#formulaire bootstrap#}
+
+                        {# generer la reference de la salle dans le publicController #}
+                        <div class="form-group">
+                            {{ form_row(form.nomSalle, {attr: {class: "form-control"} }) }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_row(form.adresseSalle, {attr: {class: "form-control"} }) }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_row(form.cpSalle, {attr: {class: "form-control"} }) }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_row(form.villeSalle, {attr: {class: "form-control"} }) }}
+                        </div>
+                        
+                        {#ATTENTION ICI CEST UNE CLE ETRANGERE POUR RECUPERER LES NOMS DE CATEGORIES#}                        
+                        <div class="form-group">  
+                            {{ form_row(form.idCategorieSalle, {attr: {class: "form-control"} }) }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_row(form.surfaceSalle, {attr: {class: "form-control"} }) }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_row(form.descriptionSalle, {attr: {class: "form-control"} }) }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_row(form.nbrPieceSalle, {attr: {class: "form-control"} }) }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_row(form.capaciteSalle, {attr: {class: "form-control"} }) }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_row(form.prixSalle, {attr: {class: "form-control"} }) }}
+                        </div>
+                        
+                        {#ATTENTION ICI CEST UNE CLE ETRANGERE POUR RECUPERER LES NOMS D'EQUIPEMENTS#}
+                        <div class="form-group">
+                            <div class="form-check form-check-inline">  
+                                {{ form_row(form.equipementSalle, {attr: {class: "form-check-input"} }) }}
+                            </div>
+                        </div>
+                        
+                        {# LE BOUTON SUBMIT EST DANS OffreSallType #}
+
+                        
+                        <div class="form-group">
+                             {{ form_end(form) }}
+                       </div>
+
+                </fieldset>
+            </div><!--FIN DE CLASS-->
+        </div><!--FIN DE ROW-->
+
+    {% endblock %}
+{#FIN DE MAIN#}
+
+{#SCRIPT#}
+    {% block javascripts %}{% endblock %}
+{#FIN DE SCRIPT#}

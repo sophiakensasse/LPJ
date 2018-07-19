@@ -1,0 +1,73 @@
+{# templates/public/template.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{#HEAD#}
+    {% block title %} {{ title }} {% endblock %}
+    {% block meta_description %}Le truc qui apparait dans les recherches google{% endblock %}
+    {% block stylesheets %}
+    <link href="{{ asset('css/calendrier.css') }}" rel="stylesheet">
+    {% endblock %}
+
+{#FIN DE HEAD#}
+
+{#HEADER#}
+    {% block header %}
+    <header id="headerDetailSalle">
+        <div class="intro-body">
+            <div class="container intro">
+                <div class="row">
+                    <div class="col-sm-12 mx-auto">
+
+                        <h1 class="brand-heading">
+                            {{ detailSalle.nomSalle }}
+                        </h1>
+                        
+                        <div class="barre-blanche col-sm-6"></div>
+                         
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    {% endblock %}
+{#FIN DE HEADER#}
+
+{#MAIN#}
+{% block main %}
+       
+       <div class="container-fluid margin-top">
+           
+           <div class="row">
+               <div class="col-sm-1"></div>
+               <div id=" {{ id }} " class="col-sm-5">
+                   <h4>Récapitulatif du produit</h4>
+                   <p>
+                       id : {{ id }} <br>
+                       Nom : {{ detailSalle.nomSalle }} <br>
+                       Adresse : {{ detailSalle.adresseSalle }} <br>
+                       Code Postal : {{ detailSalle.cpSalle }} <br>
+                       Ville : {{ detailSalle.villeSalle }} <br><br>
+                       <a class="btn btn-default" href="{{ url('detailSalle', {'id' : detailSalle.id}) }}">Retour</a>
+                   </p>
+               </div>
+               
+                <div class="col-sm-5">
+                    <h4>Choisissez vos jours de réservation</h4>
+                    <div> {{ affichage_calendrier|raw }} </div>
+                </div>
+           </div>
+           
+
+
+       </div>{#fin de container fluid#}
+
+    {% endblock %}
+{#FIN DE MAIN#}
+
+{#SCRIPT#}
+    {% block javascripts %}
+    <script src="{{ asset('js/calendrier.js') }}">
+	</script>
+    {% endblock %}
+{#FIN DE SCRIPT#}

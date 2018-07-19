@@ -1,0 +1,187 @@
+{# templates/public/template.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{#HEAD#}
+    {% block title %} {{ title }} {% endblock %}
+    {% block meta_description %}Le truc qui apparait dans les recherches google{% endblock %}
+    {% block stylesheets %}
+    <!--CSS SPEC DEATILSALLE-->
+        <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Exo+2:400,100' rel='stylesheet' type='text/css'>
+        <link href="{{ asset('css/detailSalle.css') }}" rel="stylesheet">
+        
+        <style>
+            {# ici c'est pour recuperer la bonne image de fond via le controller, c'est  une variable ici#}
+            #headerDetailSalle {
+                background-color: rgba(0, 0, 0, 0.5);
+                background: url("{{ asset('img/salle/default/')}}{{photo.0.lien_photo_default}}") no-repeat bottom center scroll;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+        </style>
+        
+    {% endblock %}
+
+{#FIN DE HEAD#}
+
+{#HEADER#}
+    {% block header %}
+    
+    <header id="headerDetailSalle">
+        <div class="intro-body">
+            <div class="container intro">
+                <div class="row">
+                    <div class="col-sm-12 mx-auto">
+
+                        <h1 class="brand-heading">
+                            {{ detail.nomSalle }}
+                        </h1>
+                        
+                        <div class="barre-blanche col-sm-6"></div>
+                         
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+        
+    {% endblock %}
+
+{#FIN DE HEADER#}
+
+{#MAIN#}
+{% block main %}
+    
+    <div class="container-fluid">
+        <div class="row margin">
+
+            <div class="col-sm-2"></div>
+              <div class="col-sm-4">
+                  <h3>{{ detail.nomSalle}}</h3>
+                  <p> Référence : {{ detail.referenceSalle }} <br>
+                      Prix : {{ detail.prixSalle }} €<br>
+                      Surface : {{ detail.surfaceSalle }} m²<br>
+                      Capacité : {{ detail.capaciteSalle }} m²<br>
+                      Nombre de pièce : {{ detail.nbrPieceSalle }} m²<br>
+                      Description : {{ detail.descriptionSalle }} <br>
+                      Catégorie : {{ detail.idCategorieSalle.libelleCategorieSalle }} <br>
+                      Adresse : {{ detail.adresseSalle }}, {{ detail.cpSalle }} {{ detail.villeSalle }}
+                  </p>
+                  
+                   <a class="btn btn-info" href="{{ url('salle') }}">Retour</a>
+                   <a class="btn btn-info" href="{{ url('reservation', {'id' : detail.id}) }}">Reserver</a>
+              </div>
+            
+                <div class="col-sm-3">
+                  <h3>Agenda des disponibilités</h3>
+                    
+                    
+
+                    <div> {{ affichage_calendrier|raw }} </div>
+                        
+                    
+
+              </div>
+            
+        </div>
+
+
+        <!--Section image et map-->
+
+        <div class="row">
+            <div class="col-sm-6">
+                  <div class="container-fluid p-0">
+                      <div class="row no-gutters popup-gallery">
+                          
+                          {% for liste in photo %}
+                          
+                          <div class="col-lg-4 col-sm-6">
+                            <div class="portfolio-box" >
+                              <img class="img-fluid" src="{{ asset('img/salle/details/')}}{{ liste.lien_photo_details }}" alt="photo">
+                            </div>
+                          </div>
+                          
+                          {% endfor %}
+
+                      </div><!--finde div row-->
+                  </div><!--finde div container-fluid-->
+            </div><!--fin de div col-sm-6-->
+            
+            <div id="map" class="col-sm-6"></div>
+        </div><!--finde div row -->
+    </div><!--finde div container-fluid main-->
+
+{% endblock %}
+{#FIN DE MAIN#}
+
+{#SCRIPT#}
+    {% block javascripts %}
+    
+    <script>
+    //variable pour la carte
+    var map;
+    //fonction initMap appelée par l'API Google
+    function initMap()
+    {
+        //DIV devant recevoir la carte
+        var mapDiv = document.getElementById('map');
+        //création de la carte
+        map = new google.maps.Map(mapDiv, {
+            zoom: 17,
+            mapTypeId: 'satellite'
+        });
+
+        //contenu HTML de la boite d'info
+        var contentString = '<div id="content">'+
+          '<div id="siteNotice">{{ detail.adresseSalle }}' + ' ' + '{{ detail.cpSalle }}' + ' ' + '{{ detail.villeSalle }}' +
+          '</div>'+
+          '<h1 id="firstHeading" class="firstHeading">{{ detail.nomSalle }}</h1>'+
+          '<div id="bodyContent">'+
+          '<p> {{ detail.descriptionSalle }} <br/></p>'+
+          '</div>'+
+          '</div>';
+        //boite d'info
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+
+        // pour centrer la carte avec une adresse réelle
+        var geocoder = new google.maps.Geocoder();
+        var address =
+              ' {{ adresse }}' + ', ' + '{{ cp }}' + ' ' + '{{ ville }}' ;
+        geocoder.geocode({'address': address}, function(results, status) 
+        {
+            if (status === google.maps.GeocoderStatus.OK)
+            {
+                map.setCenter(results[0].geometry.location);
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: results[0].geometry.location,
+                    title: '{{ detail.nomSalle }}'
+                });
+
+                // ajout de la boite et du listener
+                marker.addListener('click', function() {
+                    infowindow.open(map, marker);
+                });
+
+            } 
+            else 
+            {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+
+        });
+
+    }
+
+
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key=AIzaSyDwMSNslhTJzpI1A8U6iffFKfCCVP47awo" async defer></script>
+    
+    {% endblock %}
+{#FIN DE SCRIPT#}
